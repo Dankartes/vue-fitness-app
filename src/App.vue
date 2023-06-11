@@ -1,13 +1,15 @@
 <template>
-  <the-header></the-header>
+  <div class="the-page">
+    <the-header></the-header>
 
-  <router-view class="the-body" v-slot="props">
-    <transition name="router" mode="out-in">
-      <component :is="props.Component"></component>
-    </transition>
-  </router-view>
+    <router-view class="the-body" v-slot="props">
+      <transition name="router" mode="out-in">
+        <component :is="props.Component"></component>
+      </transition>
+    </router-view>
 
-  <the-footer></the-footer>
+    <the-footer></the-footer>
+  </div>
 </template>
 
 <script>
@@ -40,6 +42,12 @@ export default {
 </script>
 
 <style>
+.the-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 * {
   box-sizing: border-box;
 }

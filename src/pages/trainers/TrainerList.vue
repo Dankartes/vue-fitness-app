@@ -140,7 +140,7 @@ export default {
           refresh: refresh,
         });
       } catch (error) {
-        this.error = "Nu au putut fi incarcate datele!";
+        this.error = "Cannot load data!";
       }
 
       this.isLoading = false;

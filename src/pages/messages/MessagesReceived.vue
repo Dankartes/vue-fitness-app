@@ -65,7 +65,7 @@ export default {
       try {
         await this.$store.dispatch("messages/loadMessagesFirebase");
       } catch (error) {
-        this.error = error.message || "A aparut o eroare!";
+        this.error = error.message || "An error has occurred!";
       }
       this.isLoading = false;
     },

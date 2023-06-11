@@ -4,7 +4,7 @@
       <div class="left">
         <div class="col-1">
           <router-link class="trainers-link" to="/instructors"
-            >instructors</router-link
+            >Instructors</router-link
           >
           <ul>
             <li>
@@ -69,6 +69,10 @@ export default {
 </script>
 
 <style scoped>
+footer {
+  margin-top: auto;
+}
+
 .container {
   color: white;
   display: flex;

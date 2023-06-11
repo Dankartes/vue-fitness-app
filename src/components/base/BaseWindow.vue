@@ -14,7 +14,9 @@
         </section>
         <menu v-if="!fixed">
           <slot name="actions">
-            <base-button mode="full-button" @click="closeWindow">Închide</base-button>
+            <base-button mode="full-button" @click="closeWindow"
+              >Close</base-button
+            >
           </slot>
         </menu>
       </dialog>
@@ -114,11 +116,11 @@ menu {
 }
 
 .window-enter-active {
-  transition: all 0.1s ease-out; 
+  transition: all 0.1s ease-out;
 }
 
 .window-leave-active {
-  transition: all 0.1s ease-in; 
+  transition: all 0.1s ease-in;
 }
 
 .window-enter-to,
@@ -126,5 +128,4 @@ menu {
   opacity: 1;
   transform: scale(1);
 }
-
 </style>

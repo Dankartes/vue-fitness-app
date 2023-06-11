@@ -8,7 +8,7 @@
       </base-card>
     </section>
 
-    <section>
+    <section class="description">
       <base-card>
         <base-badge
           v-for="area in areas"
@@ -73,3 +73,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.description {
+  text-align: justify;
+}
+</style>

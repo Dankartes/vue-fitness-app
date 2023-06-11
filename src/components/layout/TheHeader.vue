@@ -11,7 +11,7 @@
       </h1>
       <ul>
         <li>
-          <router-link to="/instructors">instructors</router-link>
+          <router-link to="/instructors">Instructors</router-link>
         </li>
         <li>
           <router-link to="/specialities">Specialities</router-link>

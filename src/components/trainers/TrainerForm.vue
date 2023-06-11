@@ -90,7 +90,7 @@
           id="swimming"
           value="swimming"
         />
-        <label for="swimming">swimming</label>
+        <label for="swimming">Swimming</label>
       </div>
 
       <p v-if="!areas.isValid">You must select atleast one speciality!</p>

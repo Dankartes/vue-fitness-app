@@ -54,19 +54,18 @@ export default {
     if (!response.ok) {
       let errorMessage = "";
       if (responseData.error.message === "EMAIL_NOT_FOUND")
-        errorMessage = "Email-ul introdus nu există!";
+        errorMessage = "The email does not exist!";
       else if (responseData.error.message === "INVALID_PASSWORD")
-        errorMessage = "Parolă incorectă!";
+        errorMessage = "Incorrect password!";
       else if (
         responseData.error.message.includes("TOO_MANY_ATTEMPTS_TRY_LATER")
       )
-        errorMessage =
-          "Ați incercat de prea multe ori, vă rugam reveniți mai târziu.";
+        errorMessage = "Too many attempts, please try again later!";
       const error = new Error(errorMessage);
       throw error;
     }
 
-    const expiresIn = +responseData.expiresIn * 1000; //expiresIn e in secunde in mod normal, inmultit cu 1000 va fi in milisecunde
+    const expiresIn = +responseData.expiresIn * 1000;
     //const expiresIn =5000;
 
     const timeForLogOut = new Date().getTime() + expiresIn; //data expirare in milisecunde

@@ -1,20 +1,20 @@
 <template>
   <base-window
     fixed
-    title="Sunteți sigur ca doriți să ștergeți înscrierea ca antrenor?"
+    title="Are you sure you don't want to be an instructor anymore?"
     :visible="confirmDelete"
   >
     <base-button @click="deleteTrainer" type="button" mode="outline-button"
-      >Da</base-button
+      >Yes</base-button
     >
     <base-button @click="stopDeleteTrainer" type="button" mode="full-button"
-      >M-am răzgândit</base-button
+      >No</base-button
     >
   </base-window>
 
   <form @submit.prevent="submitForm">
     <div class="form-control" :class="{ incorrect: !firstName.isValid }">
-      <label for="firstname">Prenume</label>
+      <label for="firstname">First name</label>
       <input
         v-model.trim="firstName.val"
         type="text"
@@ -22,23 +22,25 @@
         @blur="removeValidation('firstName')"
       />
       <p class="validation-msg" v-if="!firstName.isValid">
-        Completati prenumele!
+        First name cannot be empty!
       </p>
     </div>
 
     <div class="form-control" :class="{ incorrect: !lastName.isValid }">
-      <label for="lastname">Nume</label>
+      <label for="lastname">Last name</label>
       <input
         v-model.trim="lastName.val"
         type="text"
         id="lastname"
         @blur="removeValidation('lastName')"
       />
-      <p class="validation-msg" v-if="!lastName.isValid">Completati numele!</p>
+      <p class="validation-msg" v-if="!lastName.isValid">
+        Last name cannot be empty!
+      </p>
     </div>
 
     <div class="form-control" :class="{ incorrect: !description.isValid }">
-      <label for="description">Descriere</label>
+      <label for="description">Description</label>
       <textarea
         v-model.trim="description.val"
         rows="5"
@@ -46,12 +48,12 @@
         @blur="removeValidation('description')"
       />
       <p class="validation-msg" v-if="!description.isValid">
-        Completati descrierea!
+        Description cannot be empty!
       </p>
     </div>
 
     <div class="form-control" :class="{ incorrect: !rate.isValid }">
-      <label for="rate">Pret/ora</label>
+      <label for="rate">Rate/hour</label>
       <input
         v-model="rate.val"
         type="number"
@@ -59,12 +61,12 @@
         @blur="removeValidation('rate')"
       />
       <p class="validation-msg" v-if="!rate.isValid">
-        Pretul trebuie completat si sa fie mai mare decat 0!
+        Rate/hour cannot be empty and must be greater than 0!
       </p>
     </div>
 
     <div class="form-control" :class="{ incorrect: !areas.isValid }">
-      <h3>Specialitate:</h3>
+      <h3>Speciality:</h3>
 
       <div>
         <input
@@ -107,21 +109,20 @@
           id="swimming"
           value="swimming"
         />
-        <label for="swimming">swimming</label>
+        <label for="swimming">Swimming</label>
       </div>
 
       <p class="validation-msg" v-if="!areas.isValid">
-        Trebuie selectata cel putin o specialitate!
+        You must select atleast one speciality!
       </p>
     </div>
 
     <base-button @click="saveTrainerData" mode="outline-button"
-      ><font-awesome-icon icon="fa-solid fa-floppy-disk" /> Salvează
-      modificările</base-button
+      ><font-awesome-icon icon="fa-solid fa-floppy-disk" /> Save</base-button
     >
     <base-button @click="confirmDeleteTrainer" type="button" mode="full-button"
-      ><font-awesome-icon icon="fa-solid fa-trash-can" /> Șterge înscrierea ca
-      antrenor</base-button
+      ><font-awesome-icon icon="fa-solid fa-trash-can" /> Delete your intructor
+      application</base-button
     >
   </form>
 </template>

@@ -28,7 +28,7 @@ export default {
     context.commit("addTrainer", {
       ...trainerData,
       id: userId,
-    }); //este executata mutatia cu acelasi nume
+    }); 
   },
 
   async deleteTrainer(context) {
@@ -64,7 +64,7 @@ export default {
     const responseData = await response.json();
 
     if (!response.ok) {
-      const error = new Error("A aparut o eroare!");
+      const error = new Error("An error has occurred!");
       throw error;
     }
 

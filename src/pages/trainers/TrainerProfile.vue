@@ -1,14 +1,13 @@
 <template>
   <section>
     <base-card>
-      <h2>Informații profil</h2>
+      <h2>Profile Information</h2>
       <trainer-profile-form
         @save-trainer="saveTrainerData"
       ></trainer-profile-form>
     </base-card>
   </section>
 </template>
-
 
 <script>
 import TrainerProfileForm from "../../components/trainers/TrainerProfileForm.vue";
@@ -26,4 +25,3 @@ export default {
   },
 };
 </script>
-
